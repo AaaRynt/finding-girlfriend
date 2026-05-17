@@ -129,6 +129,13 @@ const strategies: TStrategy[] = [
     bullets: ['可以表达兴趣，但不要过载', '不要把对方当成人生救援队', '吸引力应该是松弛的'],
     icon: Activity,
   },
+  {
+    index: '06',
+    title: '建立低压力的重复见面场景',
+    summary: '一次见面很难生成关系。真正起作用的，通常是稳定、自然、没有强目的性的重复出现。',
+    bullets: ['固定参加同一类线下活动', '别每次都从零开始社交', '让别人记住一个稳定出现的你'],
+    icon: Users,
+  },
 ]
 
 const checklistItems: TChecklistItem[] = [
@@ -175,6 +182,34 @@ const checklistItems: TChecklistItem[] = [
 ]
 
 const exposureItems = ['骑行', '羽毛球', '攀岩', '摄影', '读书会', '展览', '桌游局', '朋友饭局', '技术社区']
+
+const postGraduationLogs = [
+  {
+    time: '08:10',
+    event: 'wake up',
+    note: '从出租屋的窗帘缝里确认今天依然是工作日。',
+  },
+  {
+    time: '09:02',
+    event: 'standup meeting',
+    note: '同步进度，异步消耗情绪。',
+  },
+  {
+    time: '12:17',
+    event: 'takeaway',
+    note: '外卖柜成为当天最稳定的线下交互。',
+  },
+  {
+    time: '19:46',
+    event: 'still in office',
+    note: '工位灯没关，人的社交模块先休眠。',
+  },
+  {
+    time: '23:58',
+    event: 'doomscrolling',
+    note: '屏幕继续刷新，现实连接保持 pending。',
+  },
+]
 
 function SectionEyebrow({ children }: { children: string }) {
   return (
@@ -283,6 +318,87 @@ function SystemStatusSection() {
             })}
           </div>
         </div>
+      </div>
+    </section>
+  )
+}
+
+function TechParkObservationSection() {
+  return (
+    <section className="border-b border-[var(--color-border)] bg-[var(--color-panel-alt)] py-24 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div className="mb-12 max-w-3xl">
+          <SectionEyebrow>urban observation</SectionEyebrow>
+          <h2 className="text-3xl leading-tight font-semibold text-[var(--color-invalid)] sm:text-5xl">科技园区并不擅长让人相爱</h2>
+          <p className="mt-6 text-base leading-8 text-[var(--color-light-white)]/78">它擅长把人送进楼宇，把工牌贴近闸机，把外卖准确投递到柜门编号。它能让项目按期上线，也能让一个人的现实生活被压缩成几个可重复的坐标。</p>
+        </div>
+
+        <div className="relative -mx-5 min-h-[560px] overflow-hidden border-y border-[var(--color-border)] sm:mx-0 sm:rounded-lg sm:border lg:min-h-[680px]">
+          <img alt="夜晚科技园区通勤城市道路和办公楼" className="absolute inset-0 h-full w-full object-cover opacity-85 saturate-[0.72]" src="/images/commute-city.png" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(30,34,39,0.9)_0%,rgba(30,34,39,0.62)_45%,rgba(30,34,39,0.28)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(30,34,39,0.2)_0%,rgba(30,34,39,0.08)_42%,rgba(30,34,39,0.86)_100%)]" />
+
+          <div className="relative flex min-h-[560px] flex-col justify-end px-5 py-10 sm:px-8 lg:min-h-[680px] lg:px-12 lg:py-14">
+            <div className="max-w-3xl">
+              <p className="font-mono text-sm text-[var(--color-chalky)]">01:00 / office towers still online</p>
+              <p className="mt-5 text-3xl leading-tight font-semibold text-[var(--color-invalid)] sm:text-5xl">凌晨一点，园区还有很多楼层亮着。</p>
+              <div className="mt-8 space-y-5 text-base leading-8 text-[var(--color-light-white)]/86 sm:text-lg sm:leading-9">
+                <p>巨大的办公楼像低饱和的服务器机柜，长期开灯的楼层显示着一种并不体面的稳定性。</p>
+                <p>这里适合部署服务、交付项目、迭代产品。 但不太适合建立亲密关系。</p>
+                <p>现代城市正在把人与人的连接压缩到最低成本。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-8 border-t border-[var(--color-border)] pt-8 md:grid-cols-3">
+          <p className="text-sm leading-7 text-[var(--color-light-white)]/74">门禁把人群切成权限，工牌把身份切成字段。每天都在进入某个系统，却很少真正进入某个人的生活。</p>
+          <p className="text-sm leading-7 text-[var(--color-light-white)]/74">外卖柜、地铁闸机、标准化工位和夜间班车，构成一种干净、可控、几乎没有意外的城市动线。</p>
+          <p className="text-sm leading-7 text-[var(--color-light-white)]/74">原子化生活不是突然发生的。它是一次次“先把这个需求延后”的结果，最后连想见人都变成低优先级任务。</p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function PostGraduationSection() {
+  return (
+    <section className="border-b border-[var(--color-border)] bg-[var(--color-background)] py-20 sm:py-24">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-10">
+        <div className="max-w-2xl">
+          <SectionEyebrow>after campus</SectionEyebrow>
+          <h2 className="text-3xl leading-tight font-semibold text-[var(--color-invalid)] sm:text-4xl">大学时代结束之后</h2>
+          <div className="mt-7 space-y-5 text-base leading-8 text-[var(--color-light-white)]/84">
+            <p>学生时代的社交有一种粗糙但有效的默认值：同班、社团、宿舍、食堂、操场、临时组队、深夜便利店。很多关系并不是设计出来的，是被日程和空间顺手生成的。</p>
+            <p>工作之后，这套环境突然下线。工位、出租屋、通勤三点一线开始稳定运行，认识新人不再是系统默认功能，而是需要主动配置、持续维护、还经常超时的外部服务。</p>
+            <p className="border-l border-[var(--color-fountain-blue)] pl-5 text-[var(--color-light-white)]">
+              很多人是在毕业之后，
+              <br />
+              第一次意识到：
+              <br />
+              原来认识新朋友并不是世界默认提供的功能。
+            </p>
+          </div>
+        </div>
+
+        <TerminalWindow title="post-campus-routine.log">
+          <div className="p-5 sm:p-6">
+            <div className="mb-5 flex items-center justify-between border-b border-[var(--color-border)] pb-4 font-mono text-xs text-[var(--color-light-dark)]">
+              <span>runtime: weekday</span>
+              <span>social_env: manual</span>
+            </div>
+            <div className="space-y-4">
+              {postGraduationLogs.map((item) => (
+                <div className="grid gap-2 border-b border-[var(--color-border)]/70 pb-4 last:border-b-0 last:pb-0 sm:grid-cols-[72px_150px_1fr]" key={item.time}>
+                  <div className="font-mono text-sm text-[var(--color-chalky)]">{item.time}</div>
+                  <div className="font-mono text-sm text-[var(--color-malibu)]">{item.event}</div>
+                  <div className="text-sm leading-6 text-[var(--color-light-white)]/78">{item.note}</div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 rounded-md border border-[var(--color-border)] bg-[var(--color-background)] p-4 font-mono text-xs leading-6 text-[var(--color-coral)]">Warning: natural_social_context has been unmounted.</div>
+          </div>
+        </TerminalWindow>
       </div>
     </section>
   )
@@ -520,6 +636,8 @@ export function FindingGirlfriendPage() {
     <main className="min-h-screen bg-[var(--color-background)] text-[var(--color-light-white)]">
       <FindingGirlfriendHero />
       <SystemStatusSection />
+      <TechParkObservationSection />
+      <PostGraduationSection />
       <ProblemSection />
       <StrategySection />
       <ExpressionPatchSection />
