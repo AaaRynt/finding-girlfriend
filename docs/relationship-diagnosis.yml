@@ -1,0 +1,13 @@
+profile:
+  identity: '刚毕业的科技园区理工男'
+  location: '城市边缘的产业园区'
+  routine: '公司 -> 外卖 -> 出租屋 -> 屏幕'
+  emotional_state: '可运行，但长期告警'
+
+metrics:
+  weekly_social_events: 0.7
+  new_people_met_per_month: 1.2
+  female_ratio_in_environment: 'low'
+  sleep_quality: 'unstable'
+  self_expression: 'underdeveloped'
+  romantic_probability: 'not zero, but poorly exposed'
