@@ -97,7 +97,7 @@ const strategies: TStrategy[] = [
     index: '01',
     title: '扩大生活半径',
     summary: '先让自己出现在更多真实场景里，不是立刻搭讪，也不是突然变成社交达人。',
-    bullets: ['骑行、羽毛球、攀岩、摄影', '读书会、展览、桌游局、朋友饭局', '技术社区线下活动'],
+    bullets: ['骑行、羽毛球、攀岩、摄影', '读书会、展览、桌游、饭局', '技术社区线下活动'],
     icon: Route,
     image: '/images/community.png',
   },
@@ -105,7 +105,7 @@ const strategies: TStrategy[] = [
     index: '02',
     title: '从工作流里解放一点',
     summary: '保留一些不服务绩效的时间，让感受、表达、欲望和创造力重新有空间。',
-    bullets: ['散步、运动、阅读、拍照', '做饭、发呆、见朋友', '至少每天一段不看屏幕的时间'],
+    bullets: ['散步、运动、阅读、拍照', '做饭、发呆、见朋友', '每天一段不看屏幕的时间'],
     icon: Coffee,
     image: '/images/desk.png',
   },
@@ -113,7 +113,7 @@ const strategies: TStrategy[] = [
     index: '03',
     title: '重新训练表达能力',
     summary: '不是油嘴滑舌，而是具体、自然、有一点观察力，让自己不像只会输出状态码的后端服务。',
-    bullets: ['描述真实生活，而不是只说“还行”', '把观察放进句子里', '允许一点冷幽默，但别表演'],
+    bullets: ['描述真实生活，而非“还行”', '把观察放进句子里', '允许一点冷幽默，但别表演'],
     icon: MessageSquareText,
     image: '/images/expression.png',
   },
@@ -121,7 +121,7 @@ const strategies: TStrategy[] = [
     index: '04',
     title: '改善外在，但别变成包装工程',
     summary: '外在不是全部，但它是入口。干净、合身、正常发型和不垮的体态已经能修复很多 UI 问题。',
-    bullets: ['衣服颜色别随机生成', '鞋子别像经历过三次局部战争', '皮肤状态和体态保持基本可用'],
+    bullets: ['衣服颜色别随机生成', '鞋子别像经历三次局部战争', '皮肤和体态保持基本可用'],
     icon: Shield,
     image: '/images/appearance.png',
   },
@@ -137,7 +137,7 @@ const strategies: TStrategy[] = [
     index: '06',
     title: '建立低压力的重复见面场景',
     summary: '一次见面很难生成关系。真正起作用的，通常是稳定、自然、没有强目的性的重复出现。',
-    bullets: ['固定参加同一类线下活动', '别每次都从零开始社交', '让别人记住一个稳定出现的你'],
+    bullets: ['固定参加同一类线下活动', '别每次都从零开始社交', '让别人记住一个稳定的你'],
     icon: Users,
     image: '/images/coffee.png',
   },
@@ -192,7 +192,7 @@ const postGraduationLogs = [
   {
     time: '08:10',
     event: 'wake up',
-    note: '从出租屋的窗帘缝里确认今天依然是工作日。',
+    note: '从出租屋的窗帘缝确认今天依然是工作日。',
   },
   {
     time: '09:02',
@@ -234,7 +234,7 @@ function TerminalWindow({ children, title }: { children: ReactNode; title: strin
           <span className="size-3 rounded-full bg-(--color-chalky)" />
           <span className="size-3 rounded-full bg-(--color-green)" />
         </div>
-        <div className="font-mono text-xs text-(--color-light-dark)">{title}</div>
+        <div className="font-mono text-xs text-(--color-light-dark) italic">{title}</div>
         <Terminal className="size-4 text-(--color-light-dark)" strokeWidth={1.8} />
       </div>
       {children}
@@ -274,19 +274,29 @@ function FindingGirlfriendHero() {
 
           <TerminalWindow title="relationship-diagnosis.yml">
             <pre className="overflow-x-auto p-5 text-sm leading-7 text-(--color-light-white) sm:p-6">
-              <code>{`profile:
-  identity: '刚毕业的科技园区理工男'
-  location: '城市边缘的产业园区'
-  routine: '公司 -> 外卖 -> 出租屋 -> 屏幕'
-  emotional_state: '可运行，但长期告警'
-
-metrics:
-  weekly_social_events: 0.7
-  new_people_met_per_month: 1.2
-  female_ratio_in_environment: 'low'
-  sleep_quality: 'unstable'
-  self_expression: 'underdeveloped'
-  romantic_probability: 'not zero, but poorly exposed'`}</code>
+              <code>
+                <span className="text-(--color-coral)">profile</span>:{'\n  '}
+                <span className="text-(--color-coral)">identity</span>: <span className="text-(--color-green)">'刚毕业的科技园区理工男'</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">location</span>: <span className="text-(--color-green)">'城市边缘的产业园区'</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">routine</span>: <span className="text-(--color-green)">'公司 -&gt; 外卖 -&gt; 出租屋 -&gt; 屏幕'</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">emotional_state</span>: <span className="text-(--color-green)">'可运行，但长期告警'</span>
+                {'\n\n'}
+                <span className="text-(--color-coral)">metrics</span>:{'\n  '}
+                <span className="text-(--color-coral)">weekly_social_events</span>: <span className="text-(--color-whiskey)">0.7</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">new_people_met_per_month</span>: <span className="text-(--color-whiskey)">1.2</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">female_ratio_in_environment</span>: <span className="text-(--color-green)">'low'</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">sleep_quality</span>: <span className="text-(--color-green)">'unstable'</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">self_expression</span>: <span className="text-(--color-green)">'underdeveloped'</span>
+                {'\n  '}
+                <span className="text-(--color-coral)">romantic_probability</span>: <span className="text-(--color-green)">'not zero, but poorly exposed'</span>
+              </code>
             </pre>
           </TerminalWindow>
         </div>
@@ -403,7 +413,7 @@ function PostGraduationSection() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 rounded-md border border-(--color-border) bg-(--color-background) p-4 font-mono text-xs leading-6 text-(--color-coral)">Warning: natural_social_context has been unmounted.</div>
+            <div className="mt-6 rounded-md border border-(--color-border) bg-(--color-background) p-4 font-mono text-xs leading-6 text-(--color-whiskey) underline decoration-wavy underline-offset-4">Warning: natural_social_context has been unmounted.</div>
           </div>
         </TerminalWindow>
       </div>
@@ -421,12 +431,16 @@ function ProblemSection() {
           <p className="mt-5 text-base leading-8 text-(--color-light-white)">长得不够帅、钱不够多、不会聊天、没有机会，这些因素当然会影响结果。但更核心的问题通常是：你没有稳定、自然、低压力地认识新人的场景。</p>
           <div className="mt-8">
             <TerminalWindow title="offline-request.log">
-              <pre className="overflow-x-auto p-5 font-mono text-sm leading-7 text-(--color-coral)">
-                <code>{`request relationship_api
-target: suitable_person
-network: offline
-
-Error: connection target not found.`}</code>
+              <pre className="overflow-x-auto p-5 font-mono text-sm leading-7 text-(--color-light-white)">
+                <code>
+                  <span className="text-(--color-coral)">request</span> <span className="text-(--color-chalky)">relationship_api</span>
+                  {'\n'}
+                  <span className="text-(--color-coral)">target</span>: <span className="text-(--color-chalky)">suitable_person</span>
+                  {'\n'}
+                  <span className="text-(--color-coral)">network</span>: <span className="text-(--color-chalky)">offline</span>
+                  {'\n\n'}
+                  <span className="text-(--color-error) underline decoration-(--color-error) decoration-wavy underline-offset-4">Error: connection target not found.</span>
+                </code>
               </pre>
             </TerminalWindow>
           </div>
@@ -531,13 +545,13 @@ function ExpressionPatchSection() {
         <TerminalWindow title="conversation.diff">
           <pre className="overflow-x-auto p-5 text-sm leading-8 sm:p-6">
             <code>
-              <span className="text-(--color-coral)">- 今天天气不好。</span>
+              <span className="text-(--color-coral)">- 今天天气不好</span>
               {'\n'}
-              <span className="text-(--color-green)">+ 南京今天这个天气像系统误判，出门记得带伞。</span>
+              <span className="text-(--color-green)">+ 南京今天这个天气像系统误判，出门记得带伞</span>
               {'\n\n'}
               <span className="text-(--color-coral)">- 你吃了吗？</span>
               {'\n'}
-              <span className="text-(--color-green)">+ 我刚下班，园区食堂又一次证明了人类可以在没有希望的情况下摄入碳水。</span>
+              <span className="text-(--color-green)">+ 我刚下班，园区食堂又一次证明了人类可以在没有希望的情况下摄入碳水</span>
             </code>
           </pre>
         </TerminalWindow>
