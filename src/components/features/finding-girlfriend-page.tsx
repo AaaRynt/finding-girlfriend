@@ -220,7 +220,7 @@ function SectionEyebrow({ children }: { children: string }) {
   return (
     <div className="mb-4 flex items-center gap-2 font-mono text-xs text-(--color-fountain-blue) uppercase">
       <span className="h-px w-8 bg-(--color-fountain-blue)" />
-      {children}
+      ## {children} 
     </div>
   )
 }
